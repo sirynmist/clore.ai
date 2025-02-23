@@ -4,7 +4,7 @@
 URL="https://github.com/rigelminer/rigel/releases/download/1.21.0/rigel-1.21.0-linux.tar.gz"
 FILENAME="rigel-1.21.0-linux.tar.gz"
 DEST_DIR="/root"
-CHECK_FILE="$DEST_DIR/rigel-1.21.0-linux"
+CHECK_FILE="$DEST_DIR/rigel-1.21.0-linux/rigel"
 RETRY_INTERVAL=120
 
 
