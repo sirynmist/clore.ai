@@ -1,17 +1,12 @@
 #!/bin/bash
 
 # Define variables
-URL="https://github.com/trexminer/T-Rex/releases/download/0.26.8/t-rex-0.26.8-linux.tar.gz"
-FILENAME="t-rex-0.26.8-linux.tar.gz"
+URL="https://github.com/rigelminer/rigel/releases/download/1.21.0/rigel-1.21.0-linux.tar.gz"
+FILENAME="rigel-1.21.0-linux.tar.gz"
 DEST_DIR="/root"
-CHECK_FILE="$DEST_DIR/t-rex"
+CHECK_FILE="$DEST_DIR/rigel-1.21.0-linux"
 RETRY_INTERVAL=120
 
-# Check if WORKER_NAME environment variable exists
-if [ -z "$WORKER_NAME" ]; then
-    echo "Environment variable WORKER_NAME is not set. Exiting."
-    exit 1
-fi
 
 # Function to handle errors
 error_exit() {
@@ -75,6 +70,6 @@ fi
 while true; do
     echo "Running post-download and extraction task..."
     # Run t-rex pointed to vipor.net pool for CLORE Blockchain, use ENV variable WORKER_NAME as worker name for the pool
-    /root/t-rex -a kawpow -o stratum+tcp://pl.vipor.net:5030 -u AXteg7HjBCxsM7TM7CQNWKcDJHMsG7UxW4.$WORKER_NAME -p x
+    /root/rigel-1.21.0-linux/rigel -a quai -o stratum+tcp://eu.quai.k1pool.com:3333 -u KrPFw8eUKGjGjmKGY5b1VqcT1boYgF2F9Nz -w clor.$WORKER_NAME
     sleep 10 # Wait 10 seconds between restarts
 done
