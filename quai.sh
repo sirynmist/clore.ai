@@ -6,6 +6,7 @@ FILENAME="rigel-1.21.0-linux.tar.gz"
 DEST_DIR="/root"
 CHECK_FILE="$DEST_DIR/rigel-1.21.0-linux/rigel"
 RETRY_INTERVAL=120
+WORKER_NAME="clore"$((RANDOM % 100))
 
 # Function to handle errors
 error_exit() {
