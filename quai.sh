@@ -6,7 +6,6 @@ FILENAME="rigel-1.21.0-linux.tar.gz"
 DEST_DIR="/root"
 CHECK_FILE="$DEST_DIR/rigel-1.21.0-linux/rigel"
 RETRY_INTERVAL=120
-WORKER_NAME="clore"$((RANDOM % 100))
 
 # Function to handle errors
 error_exit() {
@@ -71,5 +70,4 @@ while true; do
     echo "Running post-download and extraction task..."
     # Run t-rex pointed to vipor.net pool for CLORE Blockchain, use ENV variable WORKER_NAME as worker name for the pool
     /root/rigel-1.21.0-linux/rigel -a quai -o stratum+tcp://eu.quai.k1pool.com:3333 -u KrPFw8eUKGjGjmKGY5b1VqcT1boYgF2F9Nz -w clor.$WORKER_NAME
-    sleep 10 # Wait 10 seconds between restarts
 done
